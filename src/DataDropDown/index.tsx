@@ -20,7 +20,6 @@ const useFetch = (url:URL['href']):[string[], (word:string) => void] => {
 };
 
 const renderWord:ItemRenderer<string> = (item, { handleClick, modifiers, query }) => {
-  console.log(item, query)
   return (
     <MenuItem
       active={modifiers.active}
@@ -40,13 +39,14 @@ const DataDropDown:React.FC = () => {
   return (
     <section className="bp3-dark">
       <Suggest
-        items={symbols as string[]}
+        items={symbols}
         inputValueRenderer={item => item}
         onQueryChange={setSymbols}
         itemRenderer={renderWord}
         openOnKeyDown
         popoverProps={{ minimal:true }}
-       />
+        noResults="No Results"
+      />
     </section>
     )
 }
