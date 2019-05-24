@@ -1,26 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const App: React.FC = () => {
+interface JSONshape {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+};
+
+
+const useFetch = (url:URL['href']):JSONshape|null => {
+  const [data, setData] = useState(null);
+
+  async function fetchData() {
+    const response:Response = await fetch(url);
+    const json = await response.json();
+    setData(json);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [url]);
+
+  return data;
+};
+
+function Example() {
+  const [count, setCount] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+       Click me
+      </button>
     </div>
   );
 }
+
+const App: React.FC = () => {
+  return <Example />
+
+};
+
 
 export default App;
