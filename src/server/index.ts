@@ -1,6 +1,8 @@
-const express = require('express');
-const { exec } = require('child_process');
-const app = express();
+import express from 'express';
+import child_process from 'child_process';
+
+const { exec } = child_process;
+const app:express.Application = express();
 const port = 3001;
 
 app.get('/words', (req, res) => {
