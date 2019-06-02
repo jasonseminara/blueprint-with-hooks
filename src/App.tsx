@@ -3,7 +3,6 @@ import DataDropDown from './DataDropDown';
 
 const App: React.FC = () => {
   return <DataDropDown />
-
 };
 
 

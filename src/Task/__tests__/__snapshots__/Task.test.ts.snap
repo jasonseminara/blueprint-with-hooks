@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Task Should convert a FEReport to a BEReport 1`] = `
+Object {
+  "id": "1XYZ - ALERT - USER STUFF",
+  "reportDetail": Object {
+    "bar": 56,
+    "baz": Array [
+      "a",
+      "b",
+      Object {
+        "c": 99,
+      },
+    ],
+    "foo": 34,
+  },
+  "type": "REPORT",
+}
+`;
+
+exports[`Task Should convert a Report to FEReport 1`] = `
+Object {
+  "detail": Object {
+    "bar": 56,
+    "baz": Array [
+      "a",
+      "b",
+      Object {
+        "c": 99,
+      },
+    ],
+    "foo": 34,
+  },
+  "hash": "e7800906f5fd665a45304329ff07e2714cdd263d",
+  "id": "1XYZ - ALERT - USER STUFF",
+  "type": "REPORT",
+}
+`;
+
+exports[`Task Should convert a Task to FETask 1`] = `
+Object {
+  "detail": Object {
+    "bar": 56,
+    "baz": Array [
+      "a",
+      "b",
+      Object {
+        "c": 67,
+      },
+    ],
+    "foo": 34,
+  },
+  "hash": "79d677d533c91dac9a1b9a5e0dceb8d8bb9b1748",
+  "id": "1234",
+  "type": "TASK",
+}
+`;
